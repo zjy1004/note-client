@@ -32,7 +32,7 @@
     },
     methods: {
       getData() {
-        this.$axios.get(`/article/${this.$route.params.id}`).then(res => {
+        this.$axios.get(`/articleById/${this.$route.params.id}`).then(res => {
           console.log(res);
           this.content = res.data
           console.log(this.content);

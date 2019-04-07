@@ -53,14 +53,21 @@ export default {
     Banner,
     UserBox,
   },
+  computed: {
+    ...mapState(['userInfo'])
+  },
   data() {
     return {
-      content: []
+      content: [],
+      param: {
+        categoryId: '',
+        updateTime: '2019-04-08'
+      }
     }
   },
   methods: {
     getData() {
-      this.$axios.get('/article').then(res => {
+      this.$axios.post('/articleContent', this.param).then(res => {
         console.log(res.data)
         this.content = res.data
         console.log(this.content)
@@ -69,10 +76,7 @@ export default {
   },
   created() {
     this.getData()
-  },
-  computed: {
-      ...mapState(['userInfo'])
-    }
+  }
 }
 </script>
 
