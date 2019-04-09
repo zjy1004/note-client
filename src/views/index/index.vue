@@ -61,7 +61,7 @@ export default {
       content: [],
       param: {
         categoryId: '',
-        updateTime: '2019-04-08'
+        updateTime: ''
       }
     }
   },
